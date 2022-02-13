@@ -3,6 +3,7 @@
 This project for create a simple application for solving a given problem below:
 
 King Shan has received intelligence that Al Falcone is in hiding in one of these 6 planets - DonLon, Enchai, Jebing, Sapir, Lerbin & Pingasor. However he has limited resources at his disposal & can send his army to only 4 of these planets.
+
 <img src="./Resource/demo.gif" width="200">
 
 ## Requirements
