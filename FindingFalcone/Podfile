@@ -1,0 +1,10 @@
+use_modular_headers!
+target 'FindingFalcone' do
+  pod 'Alamofire'
+  pod 'ObjectMapper'
+  pod 'SnapKit'
+  pod 'PINCache'
+  target 'FindingFalconeTests' do
+      inherit! :search_paths
+  end
+end

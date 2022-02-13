@@ -1,0 +1,6 @@
+module Pods_FindingFalcone {
+  umbrella header "Pods-FindingFalcone-umbrella.h"
+
+  export *
+  module * { export * }
+}
