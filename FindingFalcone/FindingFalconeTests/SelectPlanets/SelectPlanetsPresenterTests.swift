@@ -9,6 +9,17 @@ class SelectPlanetsPresenterTests: XCTestCase {
     private var mockNetwork: MockNetwokClient!
     private var presenter: SelectPlanetsPresenter!
     
+    private var successResonse: Result<[PlantResponse], APIError> = {
+        return .success(
+            [
+                PlantResponse(name: "Demo", distance: 100),
+                PlantResponse(name: "Demo2", distance: 100),
+                PlantResponse(name: "Demo3", distance: 100),
+                PlantResponse(name: "Demo4", distance: 100)
+            ]
+        )
+    }()
+    
     override func setUp() {
         super.setUp()
         configure()
@@ -69,20 +80,35 @@ class SelectPlanetsPresenterTests: XCTestCase {
         XCTAssertEqual(footer.note, "Select 4 planets")
     }
     
-    func testNextActionFail() throws {
+    func testActionTapItem() throws {
         // Given
-        let successResonse: Result<[PlantResponse], APIError> = .success(
-            [
-                PlantResponse(name: "Demo", distance: 100),
-                PlantResponse(name: "Demo2", distance: 100),
-                PlantResponse(name: "Demo3", distance: 100),
-                PlantResponse(name: "Demo4", distance: 100)
-            ]
-        )
+        let response = successResonse
+        presenter.displayDidLoad()
+        mockNetwork.getPlanetsCompletion?(response)
+        
+        let sectionItem = try XCTUnwrap(mockDisplay.setSections?.last)
+        let cellItem = try XCTUnwrap(sectionItem.items.first as? SelectPlanetsItem)
+        
+        // When
+        cellItem.primaryAction(true)
+        
+        // Then
+        XCTAssertTrue(cellItem.isSelected)
+        
+        // When
+        cellItem.primaryAction(false)
+        
+        // Then
+        XCTAssertFalse(cellItem.isSelected)
+    }
+    
+    func testNextAction_whenNotSelectedAnyItems_shouldShowError() throws {
+        // Given
+        let response = successResonse
         
         // When
         presenter.displayDidLoad()
-        mockNetwork.getPlanetsCompletion?(successResonse)
+        mockNetwork.getPlanetsCompletion?(response)
         
         let sectionItem = try XCTUnwrap(mockDisplay.setSections?.last)
         let footer = try XCTUnwrap(sectionItem.footer as? SelectPlanetsFooterItem)
@@ -94,20 +120,13 @@ class SelectPlanetsPresenterTests: XCTestCase {
         XCTAssertEqual(mockCoordinator.showSelectVehiclesCalledCount, 0)
     }
     
-    func testNextActionSuccess() throws {
+    func testNextAction_whenSelect4Items_shouldMoveToSelectVehicles() throws {
         // Given
-        let successResonse: Result<[PlantResponse], APIError> = .success(
-            [
-                PlantResponse(name: "Demo", distance: 100),
-                PlantResponse(name: "Demo2", distance: 100),
-                PlantResponse(name: "Demo3", distance: 100),
-                PlantResponse(name: "Demo4", distance: 100)
-            ]
-        )
+        let response = successResonse
         
         // When
         presenter.displayDidLoad()
-        mockNetwork.getPlanetsCompletion?(successResonse)
+        mockNetwork.getPlanetsCompletion?(response)
         
         let sectionItem = try XCTUnwrap(mockDisplay.setSections?.last)
         sectionItem.items.forEach { (item) in
