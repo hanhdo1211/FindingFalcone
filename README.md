@@ -16,10 +16,10 @@ Just open `FindingFalcone.xcworkspace` and run it
 
 
 ## Architecture
-Go with `MVP + Coordinator`, we can improve it with Router.
+Go with `MVP + Coordinator`, we can improve it with Router and Builder.
 
 ## Futherwork
 - Improve Unit tests coverage
 - Implement UI tests
-- Implement Integration test for API
+- Implement Integration tests for APIs
 - Add swift lint and swift format code
