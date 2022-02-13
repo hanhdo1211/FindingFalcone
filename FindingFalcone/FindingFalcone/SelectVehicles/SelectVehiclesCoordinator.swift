@@ -2,17 +2,17 @@ import UIKit
 
 final class SelectVehiclesCoordinator: Coordinating {
     
-    weak var parentCoordiantor: Coordinating?
-    var childCoordiantors: [Coordinating] = []
-    var navigationController: ModalNavigationController
+    weak var parentCoordinator: Coordinating?
+    var childCoordinators: [Coordinating] = []
+    var navigationController: ModalNavigationControlling
     
     private var completion: ButtonAction?
     
     init(
-        parentCoordiantor: Coordinating? = nil,
-        navigationController: ModalNavigationController
+        parentCoordinator: Coordinating? = nil,
+        navigationController: ModalNavigationControlling
     ) {
-        self.parentCoordiantor = parentCoordiantor
+        self.parentCoordinator = parentCoordinator
         self.navigationController = navigationController
         
     }

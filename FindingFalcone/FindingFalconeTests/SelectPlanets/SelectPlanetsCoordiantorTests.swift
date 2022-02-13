@@ -3,10 +3,10 @@ import XCTest
 @testable import FindingFalcone
 import UIKit
 
-class SelectPlanetsCoordiantorTests: XCTestCase {
+final class SelectPlanetsCoordiantorTests: XCTestCase {
 
-    private var mockParentCoordinator: MockCoordinating!
-    private var mockModalNavigationController: ModalNavigationController!
+    private var mockCoordinator: MockCoordinator!
+    private var mockModalNavigationController: MockModalNavigationController!
     private var coordinator: SelectPlanetsCoordinator!
     
     override func setUp() {
@@ -15,17 +15,17 @@ class SelectPlanetsCoordiantorTests: XCTestCase {
     }
 
     override func tearDown() {
-        mockParentCoordinator = nil
+        mockCoordinator = nil
         mockModalNavigationController = nil
         coordinator = nil
         super.tearDown()
     }
     
     private func configure() {
-        mockParentCoordinator = MockCoordinating()
-        mockModalNavigationController = ModalNavigationController()
+        mockCoordinator = MockCoordinator()
+        mockModalNavigationController = MockModalNavigationController()
         coordinator = SelectPlanetsCoordinator(
-            parentCoordiantor: mockParentCoordinator,
+            parentCoordinator: mockCoordinator,
             navigationController: mockModalNavigationController
         )
     }
@@ -35,8 +35,9 @@ class SelectPlanetsCoordiantorTests: XCTestCase {
         coordinator.start()
         
         // Then
-        XCTAssertTrue(coordinator.parentCoordiantor === mockParentCoordinator)
-        XCTAssertTrue(mockModalNavigationController.viewControllers.last is SelectPlanetsViewController)
+        XCTAssertTrue(coordinator.parentCoordinator === mockCoordinator)
+        XCTAssertEqual(mockModalNavigationController.pushViewControllerCalledCount, 1)
+        XCTAssertTrue(mockModalNavigationController.pushViewControllerViewController is SelectPlanetsViewController)
     }
     
     func testShowSelectVehicles() {
@@ -44,8 +45,8 @@ class SelectPlanetsCoordiantorTests: XCTestCase {
         coordinator.showSelectVehicles(selectedPlanets: [], completion: {})
         
         // Then
-        XCTAssertEqual(coordinator.childCoordiantors.count, 1)
-        XCTAssertTrue(coordinator.childCoordiantors.last is SelectVehiclesCoordinator)
+        XCTAssertEqual(coordinator.childCoordinators.count, 1)
+        XCTAssertTrue(coordinator.childCoordinators.last is SelectVehiclesCoordinator)
     }
 
 }

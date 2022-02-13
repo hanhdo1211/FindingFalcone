@@ -1,11 +1,11 @@
 @testable import FindingFalcone
 import UIKit
 
-final class MockCoordinating: Coordinating {
-    var navigationController: ModalNavigationController = ModalNavigationController()
+final class MockCoordinator: Coordinating {
+    var navigationController: ModalNavigationControlling = MockModalNavigationController()
     
-    var parentCoordiantor: Coordinating?
-    var childCoordiantors: [Coordinating] = []
+    var parentCoordinator: Coordinating?
+    var childCoordinators: [Coordinating] = []
     
     private(set) var childCoordinatorDidFinishCalledCount: Int = 0
     private(set) var childCoordinatorDidFinishCoordinator: Coordinating?

@@ -1,15 +1,15 @@
 import UIKit
 
 final class SelectPlanetsCoordinator: Coordinating {
-    weak var parentCoordiantor: Coordinating?
-    var childCoordiantors: [Coordinating] = []
-    var navigationController: ModalNavigationController
+    weak var parentCoordinator: Coordinating?
+    var childCoordinators: [Coordinating] = []
+    var navigationController: ModalNavigationControlling
     
     init(
-        parentCoordiantor: Coordinating? = nil,
-        navigationController: ModalNavigationController
+        parentCoordinator: Coordinating? = nil,
+        navigationController: ModalNavigationControlling
     ) {
-        self.parentCoordiantor = parentCoordiantor
+        self.parentCoordinator = parentCoordinator
         self.navigationController = navigationController
     }
     
@@ -26,11 +26,11 @@ final class SelectPlanetsCoordinator: Coordinating {
 extension SelectPlanetsCoordinator: SelectPlanetsCoordinatorPresentingDelegate {
     func showSelectVehicles(selectedPlanets: [SelectPlanetsItem], completion: @escaping ButtonAction) {
         let coordinator = SelectVehiclesCoordinator(
-            parentCoordiantor: self,
+            parentCoordinator: self,
             navigationController: self.navigationController
         )
         
         coordinator.start(with: selectedPlanets, completion: completion)
-        childCoordiantors.append(coordinator)
+        childCoordinators.append(coordinator)
     }
 }

@@ -28,7 +28,17 @@ private final class PopHandler {
     }
 }
 
-final class ModalNavigationController: UINavigationController {
+protocol ModalNavigationControlling: UINavigationController {
+    func pushViewController(_ viewController: UIViewController, animated: Bool, popHandler: ButtonAction?)
+}
+
+extension ModalNavigationControlling {
+    func pushViewController(_ viewController: UIViewController, animated: Bool, popHandler: ButtonAction? = nil) {
+        pushViewController(viewController, animated: animated, popHandler: popHandler)
+    }
+}
+
+final class ModalNavigationController: UINavigationController, ModalNavigationControlling {
 
     private var popHandlers: [UIViewController: PopHandler] = [:]
     

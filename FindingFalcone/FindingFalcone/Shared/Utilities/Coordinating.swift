@@ -1,9 +1,9 @@
 import UIKit
 
 protocol Coordinating: class {
-    var parentCoordiantor: Coordinating? { get }
-    var childCoordiantors: [Coordinating] { get set }
-    var navigationController: ModalNavigationController { get }
+    var parentCoordinator: Coordinating? { get }
+    var childCoordinators: [Coordinating] { get set }
+    var navigationController: ModalNavigationControlling { get }
     
     func coordinatorDidFinish()
     func childCoordinatorDidFinish(_ coordinator: Coordinating)
@@ -13,11 +13,11 @@ protocol Coordinating: class {
 
 extension Coordinating {
     func coordinatorDidFinish() {
-        parentCoordiantor?.childCoordinatorDidFinish(self)
+        parentCoordinator?.childCoordinatorDidFinish(self)
     }
     
     func childCoordinatorDidFinish(_ coordinator: Coordinating) {
-        childCoordiantors = childCoordiantors.filter { $0 !== coordinator }
+        childCoordinators = childCoordinators.filter { $0 !== coordinator }
     }
     
     func start() {

@@ -2,7 +2,7 @@ import XCTest
 
 @testable import FindingFalcone
 
-class SelectPlanetsPresenterTests: XCTestCase {
+final class SelectPlanetsPresenterTests: XCTestCase {
 
     private var mockDisplay: MockSelectPlanetsDisplay!
     private var mockCoordinator: MockSelectPlanetsCoordinator!

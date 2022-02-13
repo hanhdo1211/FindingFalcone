@@ -4,10 +4,10 @@ import XCTest
 @testable import FindingFalcone
 import UIKit
 
-class ApplicationCoordinatorTests: XCTestCase {
+final class ApplicationCoordinatorTests: XCTestCase {
 
     private var mockWindow: MockWindow!
-    private var mockModalNavigationController: ModalNavigationController!
+    private var mockModalNavigationController: MockModalNavigationController!
     private var coordinator: ApplicationCoordinator!
     
     override func setUp() {
@@ -24,7 +24,7 @@ class ApplicationCoordinatorTests: XCTestCase {
 
     private func configure() {
         mockWindow = MockWindow()
-        mockModalNavigationController = ModalNavigationController()
+        mockModalNavigationController = MockModalNavigationController()
         coordinator = ApplicationCoordinator(
             window: mockWindow,
             navigationController: mockModalNavigationController
@@ -38,9 +38,8 @@ class ApplicationCoordinatorTests: XCTestCase {
         // Then
         XCTAssertEqual(mockWindow.makeKeyAndVisibleCalledCount, 1)
         XCTAssertTrue(mockWindow.rootViewController === mockModalNavigationController)
-        XCTAssertEqual(coordinator.childCoordiantors.count, 1)
-        XCTAssertTrue(coordinator.childCoordiantors.last is SelectPlanetsCoordinator)
-        XCTAssertTrue(mockModalNavigationController.viewControllers.last is SelectPlanetsViewController)
+        XCTAssertEqual(coordinator.childCoordinators.count, 1)
+        XCTAssertTrue(coordinator.childCoordinators.last is SelectPlanetsCoordinator)
     }
 
 }

@@ -1,18 +1,18 @@
 import UIKit
 
 final class ApplicationCoordinator: Coordinating {
-    weak var parentCoordiantor: Coordinating?
-    var childCoordiantors: [Coordinating] = []
-    var navigationController: ModalNavigationController
+    weak var parentCoordinator: Coordinating?
+    var childCoordinators: [Coordinating] = []
+    var navigationController: ModalNavigationControlling
     
     private var window: WindowRepresentable
     
     init(
-        parentCoordiantor: Coordinating? = nil,
+        parentCoordinator: Coordinating? = nil,
         window: WindowRepresentable,
-        navigationController: ModalNavigationController = ModalNavigationController()
+        navigationController: ModalNavigationControlling = ModalNavigationController()
     ) {
-        self.parentCoordiantor = parentCoordiantor
+        self.parentCoordinator = parentCoordinator
         self.navigationController = navigationController
         self.window = window
     }
@@ -26,10 +26,10 @@ final class ApplicationCoordinator: Coordinating {
     
     func showSelectPlanets() {
         let coordinator = SelectPlanetsCoordinator(
-            parentCoordiantor: self,
+            parentCoordinator: self,
             navigationController: navigationController
         )
         coordinator.start()
-        childCoordiantors.append(coordinator)
+        childCoordinators.append(coordinator)
     }
 }
