@@ -17,6 +17,14 @@
 		9C1DCCCE27B82A8000A04F05 /* FindingResultCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCCCD27B82A8000A04F05 /* FindingResultCell.swift */; };
 		9C1DCCD327B8DE8600A04F05 /* ActivityIndicating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCCD227B8DE8600A04F05 /* ActivityIndicating.swift */; };
 		9C1DCCD827B8DF3C00A04F05 /* Display.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCCD727B8DF3C00A04F05 /* Display.swift */; };
+		9C1DCCE027B8E2F000A04F05 /* MockWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCCDF27B8E2F000A04F05 /* MockWindow.swift */; };
+		9C1DCCE827B8E3EC00A04F05 /* ApplicationCoordinatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCCE727B8E3EC00A04F05 /* ApplicationCoordinatorTests.swift */; };
+		9C1DCCEE27B8E62800A04F05 /* SelectPlanetsCoordiantorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCCED27B8E62800A04F05 /* SelectPlanetsCoordiantorTests.swift */; };
+		9C1DCCF927B8E6FB00A04F05 /* MockCoordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCCF827B8E6FB00A04F05 /* MockCoordinating.swift */; };
+		9C1DCCFE27B8E9C600A04F05 /* SelectPlanetsPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCCFD27B8E9C600A04F05 /* SelectPlanetsPresenterTests.swift */; };
+		9C1DCD0C27B8EA4900A04F05 /* MockSelectPlanetsDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCD0B27B8EA4900A04F05 /* MockSelectPlanetsDisplay.swift */; };
+		9C1DCD1427B8EB1900A04F05 /* MockSelectPlanetsCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCD1327B8EB1900A04F05 /* MockSelectPlanetsCoordinator.swift */; };
+		9C1DCD1927B8EBAF00A04F05 /* MockNetwokClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C1DCD1827B8EBAF00A04F05 /* MockNetwokClient.swift */; };
 		9C5BD82127B611B30000E1EA /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BD82027B611B30000E1EA /* ApplicationCoordinator.swift */; };
 		9C5BD82927B618870000E1EA /* WindowRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BD82827B618870000E1EA /* WindowRepresentable.swift */; };
 		9C5BD82F27B619EE0000E1EA /* Coordinating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C5BD82E27B619EE0000E1EA /* Coordinating.swift */; };
@@ -80,6 +88,14 @@
 		9C1DCCCD27B82A8000A04F05 /* FindingResultCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FindingResultCell.swift; sourceTree = "<group>"; };
 		9C1DCCD227B8DE8600A04F05 /* ActivityIndicating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicating.swift; sourceTree = "<group>"; };
 		9C1DCCD727B8DF3C00A04F05 /* Display.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Display.swift; sourceTree = "<group>"; };
+		9C1DCCDF27B8E2F000A04F05 /* MockWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWindow.swift; sourceTree = "<group>"; };
+		9C1DCCE727B8E3EC00A04F05 /* ApplicationCoordinatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinatorTests.swift; sourceTree = "<group>"; };
+		9C1DCCED27B8E62800A04F05 /* SelectPlanetsCoordiantorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanetsCoordiantorTests.swift; sourceTree = "<group>"; };
+		9C1DCCF827B8E6FB00A04F05 /* MockCoordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockCoordinating.swift; sourceTree = "<group>"; };
+		9C1DCCFD27B8E9C600A04F05 /* SelectPlanetsPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPlanetsPresenterTests.swift; sourceTree = "<group>"; };
+		9C1DCD0B27B8EA4900A04F05 /* MockSelectPlanetsDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSelectPlanetsDisplay.swift; sourceTree = "<group>"; };
+		9C1DCD1327B8EB1900A04F05 /* MockSelectPlanetsCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockSelectPlanetsCoordinator.swift; sourceTree = "<group>"; };
+		9C1DCD1827B8EBAF00A04F05 /* MockNetwokClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetwokClient.swift; sourceTree = "<group>"; };
 		9C5BD82027B611B30000E1EA /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
 		9C5BD82827B618870000E1EA /* WindowRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowRepresentable.swift; sourceTree = "<group>"; };
 		9C5BD82E27B619EE0000E1EA /* Coordinating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinating.swift; sourceTree = "<group>"; };
@@ -176,6 +192,51 @@
 			path = RequestBody;
 			sourceTree = "<group>";
 		};
+		9C1DCCDC27B8E2AB00A04F05 /* Mocks */ = {
+			isa = PBXGroup;
+			children = (
+				9C1DCD0A27B8EA3A00A04F05 /* SelectPlanets */,
+				9C1DCCDE27B8E2D700A04F05 /* Common */,
+			);
+			path = Mocks;
+			sourceTree = "<group>";
+		};
+		9C1DCCDD27B8E2BC00A04F05 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				9C1DCCE727B8E3EC00A04F05 /* ApplicationCoordinatorTests.swift */,
+			);
+			path = MainController;
+			sourceTree = "<group>";
+		};
+		9C1DCCDE27B8E2D700A04F05 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				9C1DCCDF27B8E2F000A04F05 /* MockWindow.swift */,
+				9C1DCCF827B8E6FB00A04F05 /* MockCoordinating.swift */,
+				9C1DCD1827B8EBAF00A04F05 /* MockNetwokClient.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		9C1DCCEC27B8E60D00A04F05 /* SelectPlanets */ = {
+			isa = PBXGroup;
+			children = (
+				9C1DCCED27B8E62800A04F05 /* SelectPlanetsCoordiantorTests.swift */,
+				9C1DCCFD27B8E9C600A04F05 /* SelectPlanetsPresenterTests.swift */,
+			);
+			path = SelectPlanets;
+			sourceTree = "<group>";
+		};
+		9C1DCD0A27B8EA3A00A04F05 /* SelectPlanets */ = {
+			isa = PBXGroup;
+			children = (
+				9C1DCD0B27B8EA4900A04F05 /* MockSelectPlanetsDisplay.swift */,
+				9C1DCD1327B8EB1900A04F05 /* MockSelectPlanetsCoordinator.swift */,
+			);
+			path = SelectPlanets;
+			sourceTree = "<group>";
+		};
 		9C5BD81E27B60EBD0000E1EA /* MainController */ = {
 			isa = PBXGroup;
 			children = (
@@ -257,6 +318,9 @@
 		9C613F9227B606E0002A4FF8 /* FindingFalconeTests */ = {
 			isa = PBXGroup;
 			children = (
+				9C1DCCEC27B8E60D00A04F05 /* SelectPlanets */,
+				9C1DCCDD27B8E2BC00A04F05 /* MainController */,
+				9C1DCCDC27B8E2AB00A04F05 /* Mocks */,
 				9C613F9327B606E0002A4FF8 /* FindingFalconeTests.swift */,
 				9C613F9527B606E0002A4FF8 /* Info.plist */,
 			);
@@ -585,7 +649,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C1DCD0C27B8EA4900A04F05 /* MockSelectPlanetsDisplay.swift in Sources */,
+				9C1DCCFE27B8E9C600A04F05 /* SelectPlanetsPresenterTests.swift in Sources */,
+				9C1DCD1427B8EB1900A04F05 /* MockSelectPlanetsCoordinator.swift in Sources */,
+				9C1DCCEE27B8E62800A04F05 /* SelectPlanetsCoordiantorTests.swift in Sources */,
 				9C613F9427B606E0002A4FF8 /* FindingFalconeTests.swift in Sources */,
+				9C1DCD1927B8EBAF00A04F05 /* MockNetwokClient.swift in Sources */,
+				9C1DCCE827B8E3EC00A04F05 /* ApplicationCoordinatorTests.swift in Sources */,
+				9C1DCCE027B8E2F000A04F05 /* MockWindow.swift in Sources */,
+				9C1DCCF927B8E6FB00A04F05 /* MockCoordinating.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

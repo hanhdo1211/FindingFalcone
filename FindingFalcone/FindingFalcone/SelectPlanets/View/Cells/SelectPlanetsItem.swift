@@ -5,13 +5,13 @@ final class SelectPlanetsItem {
     let name: String
     let distance: Int
     var isSelected: Bool
-    let primaryAction: (Bool) -> Void
+    let primaryAction: Action<Bool>
     
     init(
         name: String,
         distance: Int,
         isSelected: Bool,
-        primaryAction: @escaping (Bool) -> Void
+        primaryAction: @escaping Action<Bool>
     ) {
         self.name = name
         self.distance = distance

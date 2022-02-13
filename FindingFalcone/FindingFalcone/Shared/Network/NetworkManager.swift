@@ -2,10 +2,10 @@ import Foundation
 import Alamofire
 
 protocol Networking {
-    func getPlanets(completion: @escaping (Result<[PlantResponse], APIError>) -> Void)
-    func getVehicles(completion: @escaping (Result<[VehicleResponse], APIError>) -> Void)
-    func genToken(completion: @escaping (Result<TokenResponse, APIError>) -> Void)
-    func submitFind(data: FindData, completion: @escaping (Result<FindResponse, APIError>) -> Void)
+    func getPlanets(completion: @escaping Action<Result<[PlantResponse], APIError>>)
+    func getVehicles(completion: @escaping Action<Result<[VehicleResponse], APIError>>)
+    func genToken(completion: @escaping Action<Result<TokenResponse, APIError>>)
+    func submitFind(data: FindData, completion: @escaping Action<Result<FindResponse, APIError>>)
 }
 
 enum APIError: Error {
@@ -17,7 +17,7 @@ enum APIError: Error {
 final class NetwokClient: Networking {
     private let baseURL: String = "https://findfalcone.herokuapp.com"
     
-    func getPlanets(completion: @escaping (Result<[PlantResponse], APIError>) -> Void) {
+    func getPlanets(completion: @escaping Action<Result<[PlantResponse], APIError>>) {
         AF.request(baseURL + "/planets")
             .responseDecodable(of: [PlantResponse].self) { (response) in
                 switch response.result {
@@ -29,7 +29,7 @@ final class NetwokClient: Networking {
             }
     }
     
-    func getVehicles(completion: @escaping (Result<[VehicleResponse], APIError>) -> Void) {
+    func getVehicles(completion: @escaping Action<Result<[VehicleResponse], APIError>>) {
         AF.request(baseURL + "/vehicles")
             .responseDecodable(of: [VehicleResponse].self) { (response) in
                 switch response.result {
@@ -41,7 +41,7 @@ final class NetwokClient: Networking {
             }
     }
     
-    func genToken(completion: @escaping (Result<TokenResponse, APIError>) -> Void) {
+    func genToken(completion: @escaping Action<Result<TokenResponse, APIError>>) {
         let headers: HTTPHeaders = [
             .accept("application/json")
         ]
@@ -57,7 +57,7 @@ final class NetwokClient: Networking {
             }
     }
     
-    func submitFind(data: FindData, completion: @escaping (Result<FindResponse, APIError>) -> Void) {
+    func submitFind(data: FindData, completion: @escaping Action<Result<FindResponse, APIError>>) {
         let headers: HTTPHeaders = [
             .accept("application/json"),
             .contentType("application/json")

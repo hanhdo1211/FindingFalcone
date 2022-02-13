@@ -1,5 +1,6 @@
 import UIKit
 
+typealias Action<T> = (T) -> Void
 typealias ButtonAction = () -> Void
 
 

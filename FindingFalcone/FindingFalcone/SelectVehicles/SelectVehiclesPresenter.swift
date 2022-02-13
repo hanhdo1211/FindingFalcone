@@ -86,8 +86,8 @@ private extension SelectVehiclesPresenter {
     
     func buildPlanetVehicleList(
         planets: [SelectPlanetsItem],
-        actionSelect: @escaping (String) -> Void,
-        actionRemove: @escaping (String) -> Void
+        actionSelect: @escaping Action<String>,
+        actionRemove: @escaping Action<String>
     ) {
         
         let planetVehicleItems = planets.compactMap { planet in
