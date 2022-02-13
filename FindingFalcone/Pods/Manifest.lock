@@ -1,37 +1,20 @@
 PODS:
   - Alamofire (5.4.3)
-  - ObjectMapper (4.2.0)
-  - PINCache (3.0.3):
-    - PINCache/Arc-exception-safe (= 3.0.3)
-    - PINCache/Core (= 3.0.3)
-  - PINCache/Arc-exception-safe (3.0.3):
-    - PINCache/Core
-  - PINCache/Core (3.0.3):
-    - PINOperation (~> 1.2.1)
-  - PINOperation (1.2.1)
   - SnapKit (5.0.1)
 
 DEPENDENCIES:
   - Alamofire
-  - ObjectMapper
-  - PINCache
   - SnapKit
 
 SPEC REPOS:
   trunk:
     - Alamofire
-    - ObjectMapper
-    - PINCache
-    - PINOperation
     - SnapKit
 
 SPEC CHECKSUMS:
   Alamofire: e447a2774a40c996748296fa2c55112fdbbc42f9
-  ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
-  PINCache: 7a8fc1a691173d21dbddbf86cd515de6efa55086
-  PINOperation: 00c935935f1e8cf0d1e2d6b542e75b88fc3e5e20
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
 
-PODFILE CHECKSUM: 07430136d45b58bf0807f863ce129b7d90ed5355
+PODFILE CHECKSUM: 01aaf32f6672ba3c2d614eac0bf09172e714e687
 
 COCOAPODS: 1.11.0
